@@ -31,10 +31,20 @@ function renderOrder() {
   orderEmpty.hidden = order.length !== 0;
   orderItems.innerHTML = order.map((item) => `
     <div class="order-line">
-      <span>${item.quantity} × ${item.name} <small>${item.unit}</small></span>
-      <span>${formatMoney(Number(item.price) * Number(item.quantity))}</span>
+      <span>${Number(item.quantity)} × ${escapeHtml(item.name)} <small>${escapeHtml(item.unit || "")}</small></span>
+      <strong>${formatMoney(Number(item.price) * Number(item.quantity))}</strong>
     </div>
   `).join("");
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[character]);
 }
 
 function updateAddressField() {
@@ -46,11 +56,23 @@ function updateAddressField() {
 fulfilment.addEventListener("change", updateAddressField);
 customerForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  const name = new FormData(customerForm).get("fullName").trim();
-  formSuccess.textContent = `Thank you, ${name}. Your request is prepared. This demo does not send orders to the school yet.`;
+  if (!customerForm.reportValidity()) return;
+
+  const formData = new FormData(customerForm);
+  const name = String(formData.get("fullName")).trim();
+  const provider = String(formData.get("paymentMethod"));
+  const order = getOrder();
+  const itemCount = order.reduce((sum, item) => sum + Number(item.quantity || 0), 0);
+
+  formSuccess.innerHTML = `
+    <strong>Demo complete — thank you, ${escapeHtml(name)}!</strong>
+    <span>Your ${escapeHtml(provider)} payment was simulated successfully${itemCount ? ` for ${itemCount} ${itemCount === 1 ? "item" : "items"}` : ""}. No money was transferred and no order was sent to the school.</span>
+    <span class="demo-reference">SIMULATION ONLY · NO REAL PAYMENT</span>
+  `;
   formSuccess.hidden = false;
   formSuccess.scrollIntoView({ behavior: "smooth", block: "nearest" });
   sessionStorage.removeItem("machameOrder");
+  renderOrder();
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();

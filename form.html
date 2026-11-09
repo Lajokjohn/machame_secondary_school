@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Customer details and demo mobile-money checkout for Machame Girls Secondary School." />
+  <title>Customer Details | Machame Girls Agriculture Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="customer-form.js" defer></script>
+</head>
+<body class="customer-page">
+  <div class="announcement-bar">Supporting agriculture learning at Machame Girls Secondary School</div>
+
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a class="brand-block" href="index.html" aria-label="Machame Girls Agriculture Store home">
+        <span class="brand-mark" aria-hidden="true">🌱</span>
+        <span class="brand-text">
+          <span class="brand-title">Machame Girls</span>
+          <span class="brand-subtitle">Secondary School</span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html#shop">Shop</a>
+        <a href="index.html#about">Our Project</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a class="button button-secondary customer-back-link" href="index.html#shop">← Back to shop</a>
+    </div>
+  </header>
+
+  <main class="customer-main">
+    <div class="container">
+      <div class="customer-intro">
+        <p class="eyebrow">YOUR ORDER · SECURE DETAILS</p>
+        <h1>Let’s get your fresh harvest ready.</h1>
+        <p>Share your contact and fulfilment details, then try our mobile-money checkout demo. No payment is taken and no details are sent to a payment provider.</p>
+      </div>
+
+      <div class="demo-notice" role="note">
+        <span class="demo-notice-icon" aria-hidden="true">ⓘ</span>
+        <p><strong>Demo only:</strong> M-Pesa, Tigo Pesa, Airtel Money, and HaloPesa below are simulated options. This site does not process real payments. Never enter your mobile-money PIN.</p>
+      </div>
+
+      <div class="customer-layout">
+        <section class="customer-form-panel" aria-labelledby="detailsHeading">
+          <div class="form-section-heading">
+            <span class="step-number">01</span>
+            <div>
+              <h2 id="detailsHeading">Customer details</h2>
+              <p class="form-lead">We’ll use these details for this demo order request.</p>
+            </div>
+          </div>
+
+          <form id="customerForm">
+            <div class="customer-form-grid">
+              <div class="customer-field customer-field-full">
+                <label for="fullName">Full name</label>
+                <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="e.g. Amina John" required />
+              </div>
+              <div class="customer-field">
+                <label for="phone">Mobile number</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 07XX XXX XXX" pattern="[+0-9() -]{9,18}" required />
+                <small>Use the number you would use in the payment demo.</small>
+              </div>
+              <div class="customer-field">
+                <label for="email">Email <span>(optional)</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+              </div>
+              <div class="customer-field customer-field-full">
+                <label for="fulfilment">How would you like to receive your order?</label>
+                <select id="fulfilment" name="fulfilment" required>
+                  <option value="pickup">Pick up from the school</option>
+                  <option value="delivery">Request delivery</option>
+                </select>
+              </div>
+              <div class="customer-field customer-field-full" id="addressField" hidden>
+                <label for="address">Delivery area / address</label>
+                <textarea id="address" name="address" rows="3" placeholder="Enter your area and any delivery directions"></textarea>
+              </div>
+            </div>
+
+            <div class="form-divider"></div>
+            <div class="form-section-heading payment-heading">
+              <span class="step-number">02</span>
+              <div>
+                <h2>Choose a demo payment method</h2>
+                <p class="form-lead">Select a provider to preview a simulated payment prompt.</p>
+              </div>
+            </div>
+
+            <fieldset class="payment-methods">
+              <legend class="visually-hidden">Mobile-money provider</legend>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="M-Pesa" checked required />
+                <span class="provider-logo provider-mpesa">M</span>
+                <span class="provider-copy"><strong>M-Pesa</strong><small>Mobile money · Demo</small></span>
+                <span class="radio-indicator" aria-hidden="true"></span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="Tigo Pesa" />
+                <span class="provider-logo provider-tigo">T</span>
+                <span class="provider-copy"><strong>Tigo Pesa</strong><small>Mobile money · Demo</small></span>
+                <span class="radio-indicator" aria-hidden="true"></span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="Airtel Money" />
+                <span class="provider-logo provider-airtel">A</span>
+                <span class="provider-copy"><strong>Airtel Money</strong><small>Mobile money · Demo</small></span>
+                <span class="radio-indicator" aria-hidden="true"></span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="HaloPesa" />
+                <span class="provider-logo provider-halo">H</span>
+                <span class="provider-copy"><strong>HaloPesa</strong><small>Mobile money · Demo</small></span>
+                <span class="radio-indicator" aria-hidden="true"></span>
+              </label>
+            </fieldset>
+
+            <label class="demo-consent">
+              <input id="demoConsent" name="demoConsent" type="checkbox" required />
+              <span>I understand this is a simulation and no real payment will be made.</span>
+            </label>
+
+            <button type="submit" class="button button-primary full-width submit-order-button">Simulate payment &amp; place demo order <span aria-hidden="true">→</span></button>
+            <p class="form-security-note"><span aria-hidden="true">🔒</span> Demo only. No PIN, payment credentials, or card information will be requested.</p>
+            <div id="formSuccess" class="form-success" role="status" aria-live="polite" hidden></div>
+          </form>
+        </section>
+
+        <aside class="order-summary" aria-labelledby="summaryHeading">
+          <div class="summary-topline"><span>ORDER SUMMARY</span><span class="summary-leaf" aria-hidden="true">🌿</span></div>
+          <h2 id="summaryHeading">Your basket</h2>
+          <p class="summary-subtitle">Fresh produce from our school garden.</p>
+          <div id="orderItems" class="order-items"></div>
+          <div id="orderEmpty" class="order-empty" hidden>
+            <span aria-hidden="true">🧺</span>
+            <p>Your basket is empty.</p>
+            <a href="index.html#shop">Browse the farm store →</a>
+          </div>
+          <div class="summary-count-row"><span>Items</span><strong id="orderItemCount">0 items</strong></div>
+          <div class="summary-total"><span>Total</span><strong id="orderTotal">TZS 0</strong></div>
+          <div class="summary-impact"><span aria-hidden="true">🌱</span><p>Your order supports practical agriculture learning at Machame Girls Secondary School.</p></div>
+          <p class="summary-demo-label">DEMO CHECKOUT · NO REAL CHARGE</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand-block footer-brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">🌱</span>
+        <span class="brand-text"><span class="brand-title">Machame Girls</span><span class="brand-subtitle">Secondary School</span></span>
+      </a>
+      <p>Growing food. Growing futures.</p>
+      <span>© <span id="year"></span> Machame Girl's Secondary School</span>
+    </div>
+  </footer>
+</body>
+</html>
