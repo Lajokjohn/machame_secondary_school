@@ -119,7 +119,7 @@ function renderProducts() {
       (product) => `
         <article class="product-card">
           <div class="product-image-wrap">
-            <img src="${product.image}" data-fallback="images/garden.jpg" alt="${product.name}" loading="lazy" />
+            <img src="${product.image}" data-fallback="./garden-fallback.svg" alt="${product.name}" loading="lazy" />
             <span class="product-tag">${product.tag}</span>
           </div>
           <div class="product-info">
@@ -162,7 +162,7 @@ function renderCart() {
       const product = products.find((p) => p.id === Number(id));
       return `
         <div class="cart-row">
-          <img src="${product.image}" data-fallback="images/garden.jpg" alt="${product.name}" />
+          <img src="${product.image}" data-fallback="./garden-fallback.svg" alt="${product.name}" />
           <div>
             <h3>${product.name}</h3>
             <p>${money(product.price)} • ${product.unit}</p>
