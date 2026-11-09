@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Machame Girls Secondary School Agriculture Project Store" />
+  <title>Machame Girls Agriculture Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement-bar">
+    Supporting agriculture learning at Machame Girls Secondary School
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <div class="brand-block">
+        <div class="brand-mark">🌱</div>
+        <div class="brand-text">
+          <span class="brand-title">Machame Girls</span>
+          <span class="brand-subtitle">Secondary School</span>
+        </div>
+      </div>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+        <a href="#shop">Shop</a>
+        <a href="form.html">Customer Form</a>
+        <a href="#about">Our Project</a>
+        <a href="#impact">Impact</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="cart-button" id="openCart" aria-label="Open shopping cart">
+        <span>🛍</span>
+        <span>Cart</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-layout">
+        <div class="hero-content">
+          <p class="eyebrow">MACHAME GIRLS SECONDARY SCHOOL</p>
+          <h1>Fresh produce.<br /><span>Strong futures.</span></h1>
+          <p class="hero-text">
+            We grow healthy, high-quality food through practical agriculture learning.
+            Every purchase supports our students and helps build a sustainable future.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#shop" class="button button-primary">Shop Now</a>
+            <a href="#about" class="button button-secondary">Our Story</a>
+          </div>
+
+          <div class="hero-badges">
+            <div class="badge">
+              <span>🌿</span>
+              <div>
+                <strong>Student Grown</strong>
+                <small>Hands-on learning</small>
+              </div>
+            </div>
+            <div class="badge">
+              <span>🥬</span>
+              <div>
+                <strong>Fresh Harvest</strong>
+                <small>Daily delivery</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img
+            src="images/machame.jpg"
+            alt="Entrance sign at Machame Girls Secondary School"
+          />
+          <div class="floating-card">
+            <p>School Agriculture Project</p>
+            <strong>Machame Girls</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat">
+          <strong>100%</strong>
+          <span>Student-led cultivation</span>
+        </div>
+        <div class="stat">
+          <strong>500+</strong>
+          <span>Hectares of learning impact</span>
+        </div>
+        <div class="stat">
+          <strong>Fresh</strong>
+          <span>Farm-to-school produce</span>
+        </div>
+        <div class="stat">
+          <strong>Eco</strong>
+          <span>Better farming practices</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop" id="shop">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">OUR FARM STORE</p>
+            <h2>Fresh harvest from our school garden</h2>
+          </div>
+
+          <label class="search-box">
+            <span>⌕</span>
+            <input type="search" id="searchInput" placeholder="Search products..." aria-label="Search products" />
+          </label>
+        </div>
+
+        <div class="toolbar">
+          <div class="filter-row" id="filterRow" aria-label="Product categories">
+            <button class="filter-button active" data-category="All">All</button>
+            <button class="filter-button" data-category="Vegetables">Vegetables</button>
+            <button class="filter-button" data-category="Fruits">Fruits</button>
+            <button class="filter-button" data-category="Garden goods">Garden goods</button>
+          </div>
+
+          <span class="product-count" id="productCount">0 products</span>
+        </div>
+
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        <p class="empty-message" id="emptyMessage" hidden>No products match your search.</p>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img
+            src="images/garden.jpg"
+            alt="Farm workers tending crops in the field"
+          />
+        </div>
+
+        <div class="about-content">
+          <p class="eyebrow">OUR MISSION</p>
+          <h2>Growing knowledge, food, and confidence.</h2>
+          <p>
+            Our agriculture project gives students the opportunity to learn practical farming,
+            sustainable methods, and the importance of food security. Through this project,
+            students build skills that help shape brighter futures.
+          </p>
+
+          <div class="mini-list">
+            <div>
+              <span>✔</span>
+              <p>Hands-on practical farming</p>
+            </div>
+            <div>
+              <span>✔</span>
+              <p>Environmental awareness and sustainability</p>
+            </div>
+            <div>
+              <span>✔</span>
+              <p>Income generation for school growth</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact" id="impact">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="eyebrow">WHY IT MATTERS</p>
+          <h2>Our agriculture project changes lives, and support students achieving their higher education</h2>
+        </div>
+
+        <div class="impact-grid">
+          <div class="impact-card">
+            <div class="icon">🌾</div>
+            <h3>Skill Building</h3>
+            <p>Students gain hands-on farming experience and confidence in sustainable agriculture.</p>
+          </div>
+
+          <div class="impact-card">
+            <div class="icon">💧</div>
+            <h3>Better Farming</h3>
+            <p>We promote responsible land use, conservation, and efficient crop production.</p>
+          </div>
+
+          <div class="impact-card">
+            <div class="icon">🤝</div>
+            <h3>Community Support</h3>
+            <p>By buying local produce, you directly help the school strengthen learning opportunities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-strip" id="contact">
+      <div class="container contact-layout">
+        <div>
+          <p class="eyebrow">CONTACT US</p>
+          <h2>Support our agriculture project</h2>
+        </div>
+        <a href="mailto:machamegirls@example.com" class="button button-primary">Email the school</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand-block footer-brand">
+        <div class="brand-mark">🌱</div>
+        <div class="brand-text">
+          <span class="brand-title">Machame Girls</span>
+          <span class="brand-subtitle">Secondary School</span>
+        </div>
+      </div>
+
+      <p>Growing food. Growing futures.</p>
+      <span>© <span id="year"></span> Machame Girl's Secondary School</span>
+    </div>
+  </footer>
+
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+
+  <aside class="cart-panel" id="cartPanel" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">YOUR ORDER</p>
+        <h2>Cart <span id="cartHeadingCount">(0)</span></h2>
+      </div>
+      <button type="button" class="icon-button" id="closeCart" aria-label="Close cart">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-empty" id="cartEmpty">
+      <span aria-hidden="true">🧺</span>
+      <h3>Your basket is empty</h3>
+      <p>Pick something fresh from our school garden.</p>
+      <button type="button" class="button button-primary" id="browseShop">Browse products</button>
+    </div>
+
+    <div class="cart-footer" id="cartFooter" hidden>
+      <div class="totals">
+        <span>Total</span>
+        <strong id="cartTotal">TZS 0</strong>
+      </div>
+      <button type="button" class="button button-primary full-width" id="checkoutButton">Customer details</button>
+      <p class="mini-note">Complete the customer form to prepare your order request.</p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

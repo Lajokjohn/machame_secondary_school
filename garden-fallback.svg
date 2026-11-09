@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Machame school garden</title>
+  <desc id="desc">Illustrated rows of vegetables growing in a green school garden beneath Mount Kilimanjaro.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#dcefe5"/>
+      <stop offset="1" stop-color="#f4f3df"/>
+    </linearGradient>
+    <linearGradient id="field" x2="0" y2="1">
+      <stop stop-color="#6c9c62"/>
+      <stop offset="1" stop-color="#315d3b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <circle cx="930" cy="150" r="64" fill="#e6bd65" opacity=".8"/>
+  <path d="M0 450 250 220l165 150 210-245 255 290 130-150 190 185v160H0Z" fill="#a8c6b0"/>
+  <path d="m414 370 211-245 150 171-82-32-37 34-48-24-37 44-48-20-45 47Z" fill="#fff" opacity=".86"/>
+  <path d="M0 460q230-85 470 4t730-8v344H0Z" fill="url(#field)"/>
+  <path d="M90 800q180-225 380-301M340 800q115-214 265-305M720 800q-30-185-96-300M1000 800q-115-205-228-292" fill="none" stroke="#d7b56d" stroke-width="15" opacity=".8"/>
+  <g fill="#356d45" stroke="#244f37" stroke-width="7">
+    <path d="M210 592q-90-88-8-130 49 66 8 130Zm0 0q-10-118 69-124 0 75-69 124Zm0 0q-76-29-60-91 46 11 60 91Z"/>
+    <path d="M898 548q-82-81-7-119 45 60 7 119Zm0 0q-10-108 63-114 0 69-63 114Zm0 0q-69-27-54-82 42 10 54 82Z"/>
+  </g>
+  <g fill="#c75c43" stroke="#a34435" stroke-width="6">
+    <circle cx="508" cy="578" r="37"/><circle cx="602" cy="563" r="31"/><circle cx="682" cy="585" r="39"/>
+  </g>
+  <g fill="#e7a94c" stroke="#bf7835" stroke-width="6">
+    <path d="M346 625q34-104 67-147 30 55 2 152-35 22-69-5Z"/>
+    <path d="M773 633q28-93 60-138 31 51 3 143-32 21-63-5Z"/>
+  </g>
+  <g fill="#638e4e">
+    <path d="M375 480q-28-34-4-48 21 21 4 48Zm8-8q2-36 29-34-1 26-29 34Z"/>
+    <path d="M799 506q-27-32-4-46 20 20 4 46Zm8-8q2-33 27-32-1 24-27 32Z"/>
+  </g>
+</svg>
